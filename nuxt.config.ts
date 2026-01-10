@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    adminAuthKey: '',
     s3AccessKey: '',
     s3SecretKey: '',
   },
