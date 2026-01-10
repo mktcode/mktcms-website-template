@@ -5,3 +5,8 @@
   --color-brand: #123456;
   --font-brand: 'Inter', sans-serif;
 }
+
+body {
+  font-family: var(--font-brand);
+  background-color: var(--color-brand);
+}
