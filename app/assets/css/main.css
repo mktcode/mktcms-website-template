@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand: #123456;
+  --font-brand: 'Inter', sans-serif;
+}
