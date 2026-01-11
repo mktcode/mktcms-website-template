@@ -7,6 +7,9 @@
 }
 
 body {
-  font-family: var(--font-brand);
-  background-color: var(--color-brand);
+  @apply font-brand bg-gray-100 text-gray-900;
+}
+
+.admin-button {
+  @apply flex items-center justify-center bg-sky-600 text-white font-semibold py-2 px-4 rounded hover:bg-sky-700;
 }
