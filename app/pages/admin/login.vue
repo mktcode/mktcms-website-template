@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const authKey = ref('')
+const adminAuthKey = ref('')
 
 async function login() {
   await $fetch('/api/admin/login', {
     method: 'POST',
     body: {
-      authKey: authKey.value,
+      adminAuthKey: adminAuthKey.value,
     },
   })
 
@@ -24,8 +24,8 @@ async function login() {
           Schlüssel:
         </label>
         <input
-          id="authKey"
-          v-model="authKey"
+          id="adminAuthKey"
+          v-model="adminAuthKey"
           type="password"
           class="border border-gray-300 rounded-md p-2 mt-2"
         >

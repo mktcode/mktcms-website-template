@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
 
   const { adminAuthKey } = useRuntimeConfig()
 
-  const authKeyCookie = getCookie(event, 'auth_key')
+  const authKeyCookie = getCookie(event, 'admin_auth_key')
 
   if (!authKeyCookie || authKeyCookie !== adminAuthKey || adminAuthKey === '') {
     if (isAdminApiRoute) {
