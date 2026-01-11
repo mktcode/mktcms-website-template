@@ -1,9 +1,19 @@
+import z from "zod"
+
 function sanitizeFilename(filename: string): string {
   return filename.replace(/[^a-zA-Z0-9.\-_]/g, '_')
 }
 
+const querySchema = z.object({
+  path: z.string().optional(),
+})
+
 export default defineEventHandler(async (event) => {
   const form = await readMultipartFormData(event)
+  const { filesPathPrefix } = useRuntimeConfig()
+
+  const { path } = await getValidatedQuery(event, query => querySchema.parse(query))
+  const sanePath = path ? path.replace(/^\//, '').replace(/\/$/, '') : undefined
 
   if (!form) {
     throw createError({
@@ -39,7 +49,7 @@ export default defineEventHandler(async (event) => {
     })
   }
   
-  const filePath = sanitizeFilename(file.filename)
+  const filePath = [filesPathPrefix, sanePath, sanitizeFilename(file.filename)].filter(Boolean).join('/')
   await useStorage('content').setItemRaw(filePath, Buffer.from(file.data))
 
   const returnFileName = filePath

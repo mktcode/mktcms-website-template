@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { data: keys, refresh } = await useFetch('/api/content/list')
 
-const { isUploading, fileInput, uploadFiles } = useAdminUpload()
+const { isUploading, fileInput, path, uploadFiles } = useAdminUpload()
 </script>
 
 <template>
@@ -14,6 +14,12 @@ const { isUploading, fileInput, uploadFiles } = useAdminUpload()
       </p>
 
       <div class="flex gap-3">
+        <input
+          v-model="path"
+          type="text"
+          placeholder="Unterordner (z.B. 'Produkte')"
+          class="input-field"
+        />
         <button
           class="admin-button"
           :disabled="isUploading"

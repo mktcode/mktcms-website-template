@@ -3,6 +3,10 @@ export default function useAdminUpload() {
   const files = ref<string[]>([])
   const fileInput = ref<HTMLInputElement | null>(null)
   const isUploading = ref(false)
+  const path = ref<string | null>(null)
+  const sanePath = computed(() => {
+    return path.value ? path.value.replace(/^\//, '').replace(/\/$/, '') : undefined
+  })
 
   async function uploadFiles(event: Event) {
     if (isUploading.value) return
@@ -26,7 +30,8 @@ export default function useAdminUpload() {
     try {
       const res = await $fetch<{ success: boolean; path: string }>('/api/content/upload', {
         method: 'POST',
-        body: formData
+        body: formData,
+        query: { path: sanePath.value }
       })
       if (res?.success && res.path) {
         files.value.push(res.path)
@@ -55,6 +60,7 @@ export default function useAdminUpload() {
   return {
     uploadError,
     isUploading,
+    path,
     files,
     fileInput,
     uploadFiles,
