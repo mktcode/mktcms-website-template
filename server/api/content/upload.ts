@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // TODO: allow all image types and convert to webp on the fly
-  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png']
+  const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp', '.md', '.docx', '.txt']
   const fileExtension = file.filename.toLowerCase().slice(file.filename.lastIndexOf('.'))
   
   if (!allowedExtensions.includes(fileExtension)) {

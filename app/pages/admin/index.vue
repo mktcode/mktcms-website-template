@@ -39,7 +39,7 @@ const { isUploading, fileInput, path, uploadFiles } = useAdminUpload()
           ref="fileInput"
           class="hidden"
           type="file"
-          accept=".pdf,.jpg,.jpeg,.png"
+          accept=".pdf,.jpg,.jpeg,.png,.gif,.svg,.webp,.md,.docx,.txt"
           @change="async (e) => { await uploadFiles(e); await refresh(); }"
         />
       </div>
