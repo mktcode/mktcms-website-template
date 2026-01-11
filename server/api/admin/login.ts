@@ -1,13 +1,19 @@
+import z from "zod"
+
+const bodySchema = z.object({
+  adminAuthKey: z.string(),
+})
+
 export default defineEventHandler(async (event) => {
   const { adminAuthKey } = useRuntimeConfig()
 
-  const body = await readBody(event)
+  const body = await readValidatedBody(event, body => bodySchema.parse(body))
 
-  if (body.authKey !== adminAuthKey) {
+  if (body.adminAuthKey !== adminAuthKey.toString()) {
     throw createError({ statusCode: 401, statusMessage: 'Unauthorized' })
   }
 
-  setCookie(event, 'auth_key', adminAuthKey, {
+  setCookie(event, 'admin_auth_key', adminAuthKey.toString(), {
     httpOnly: true,
     maxAge: 7 * 24 * 60 * 60,
   })
