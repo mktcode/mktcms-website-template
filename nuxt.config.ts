@@ -15,10 +15,4 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
-  runtimeConfig: {
-    filesPathPrefix: '',
-    adminAuthKey: '',
-    s3AccessKey: '',
-    s3SecretKey: '',
-  },
 })
