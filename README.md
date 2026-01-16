@@ -1,75 +1,51 @@
-# Nuxt Minimal Starter
-
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
+# Neue Website anlegen
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+DOMAIN_NAME=kundexyz.mktcode.de
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+git clone git@github.com:mktcode/mktcode-website-template.git ${DOMAIN_NAME}
+cd ${DOMAIN_NAME}
+npm i
+cp .env.example .env
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit"
+git branch -m main
+# Publish to GitHub as private repository
 ```
 
-## Production
+# Deployment
 
-Build the application for production:
+### DNS
+
+A-Record (auch für `www.`) auf die Server IP zeigen lassen.
+
+### Setup
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+DOMAIN_NAME=kundexyz.mktcode.de
 ```
 
-Locally preview production build:
+Dann auf dem Server (eingerichtet mit `.config/nuxtapps.yml`) mit folgendem Befehl das Repo klonen, Service sowie Reverse Proxy anlegen, App starten und Zertifikat holen:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+newnuxtapp ${DOMAIN_NAME} 3000
+nuxtappcert ${DOMAIN_NAME}
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Environment anpassen:
+
+```bash
+vim /etc/supervisor/conf.d/${DOMAIN_NAME}.conf
+supervisorctl reread
+supervisorctl update
+```
+
+### Update
+
+```bash
+updatenuxtapp ${DOMAIN_NAME}
+```
