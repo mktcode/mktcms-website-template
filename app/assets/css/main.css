@@ -3,6 +3,8 @@
 
 @theme {
   --color-brand: #123456;
+  --color-brand-hover: #0f2a4d;
+  --color-brand-soft: #e0e7ff;
   --font-brand: 'Inter', sans-serif;
 }
 
