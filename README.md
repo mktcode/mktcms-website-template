@@ -5,7 +5,7 @@ DOMAIN_NAME=kundexyz.mktcode.de
 ```
 
 ```bash
-git clone git@github.com:mktcode/mktcode-website-template.git ${DOMAIN_NAME}
+git clone git@github.com:mktcode/mktcms-website-template.git ${DOMAIN_NAME}
 cd ${DOMAIN_NAME}
 npm i
 cp .env.example .env
