@@ -1,7 +1,7 @@
-# Neue Website anlegen
+# Create a new Website
 
 ```bash
-DOMAIN_NAME=kundexyz.mktcode.de
+DOMAIN_NAME=customerxyz.mydomain.com
 ```
 
 ```bash
@@ -19,33 +19,30 @@ git branch -m main
 
 # Deployment
 
-### DNS
-
-A-Record (auch für `www.`) auf die Server IP zeigen lassen.
-
-### Setup
+On the server (set up with `init.yml` from [`mktcode/mktcms-server`](https://github.com/mktcode/mktcms-server)) use the `websitenew` command:
 
 ```bash
-DOMAIN_NAME=kundexyz.mktcode.de
+DOMAIN_NAME=customerxyz.mydomain.com
+websitenew ${DOMAIN_NAME} 3000
 ```
 
-Dann auf dem Server (eingerichtet mit `.config/nuxtapps.yml`) mit folgendem Befehl das Repo klonen, Service sowie Reverse Proxy anlegen, App starten und Zertifikat holen:
+Set A-Record (also for `www.`) pointing to the server IP and obtain SSL certificate using `websitecert`:
 
 ```bash
-newnuxtapp ${DOMAIN_NAME} 3000
-nuxtappcert ${DOMAIN_NAME}
+websitecert ${DOMAIN_NAME}
 ```
 
-Environment anpassen:
+Adjust environment variables in the service configuration as needed and restart the application:
 
 ```bash
 vim /etc/supervisor/conf.d/${DOMAIN_NAME}.conf
 supervisorctl reread
 supervisorctl update
+supervisorctl restart ${DOMAIN_NAME}
 ```
 
 ### Update
 
 ```bash
-updatenuxtapp ${DOMAIN_NAME}
+websiteupdate ${DOMAIN_NAME}
 ```
