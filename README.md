@@ -17,6 +17,10 @@ git branch -m main
 # Publish to GitHub as private repository
 ```
 
+## Configuration
+
+Edit `nuxt.config.ts` and set a page title and description and replace the favicon.
+
 # Deployment
 
 On the server (set up with `init.yml` from [`mktcode/mktcms-server`](https://github.com/mktcode/mktcms-server)) use the `websitenew` command:

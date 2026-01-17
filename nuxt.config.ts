@@ -15,4 +15,22 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  app: {
+    head: {
+      title: 'Neue Website',
+      meta: [
+        {
+          name: 'description',
+          content: 'Meine neue mktCMS Website',
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon.png',
+        },
+      ],
+    },
+  },
 })
