@@ -19,7 +19,12 @@ git branch -m main
 
 ## Configuration
 
-Edit `nuxt.config.ts` and set a page title and description and replace the favicon.
+Edit `nuxt.config.ts`:
+
+- favicon
+- title, description
+- og-tags
+- robots
 
 # Deployment
 
