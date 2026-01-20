@@ -25,6 +25,7 @@ Edit `nuxt.config.ts`:
 - title, description
 - og-tags
 - robots
+- (per page meta tags in `pages/`)
 
 # Deployment
 
