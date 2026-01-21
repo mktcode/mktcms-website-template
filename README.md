@@ -15,9 +15,6 @@ git add .
 git commit -m "Initial commit"
 git branch -m main
 # Publish to GitHub as private repository
-
-# Link content storage for development
-mkdir -p .storage && ln -s "/home/mkt/projects/$DOMAIN_NAME/content" .storage/${DOMAIN_NAME}
 ```
 
 ## Configuration
