@@ -27,6 +27,8 @@ Edit `nuxt.config.ts`:
 - robots
 - (per page meta tags in `pages/`)
 
+Edit errors page: `error.vue`
+
 # Deployment
 
 On the server (set up with `init.yml` from [`mktcode/mktcms-server`](https://github.com/mktcode/mktcms-server)) use the `websitenew` command:
