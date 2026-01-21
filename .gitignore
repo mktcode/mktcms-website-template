@@ -25,3 +25,6 @@ logs
 
 # Storage folder for local development
 .storage
+
+# Content zip file
+content.zip

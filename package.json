@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "content:zip": "zip -r content.zip content"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.12.1",
