@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "content:zip": "zip -r content.zip content"
+    "content:init": "cp -r content .storage"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.12.1",
