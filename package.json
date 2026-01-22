@@ -9,8 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "content:init": "cp -r content .storage"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.12.1",
