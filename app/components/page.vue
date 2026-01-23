@@ -2,7 +2,9 @@
   <div>
     <header class="bg-brand-soft">
       <nav class="container max-w-292.5 mx-auto px-4 py-3 bg-brand text-white">
-        <a href="/" class="font-bold">Meine Webseite</a>
+        <NuxtLink to="/" class="font-bold">
+          Meine Webseite
+        </NuxtLink>
       </nav>
     </header>
     <main>
@@ -10,10 +12,7 @@
         <div class="bg-brand-soft rounded-sm p-4 mb-4">
           <h1 class="text-4xl font-bold">Hallo Welt!</h1>
         </div>
-        <nav class="bg-brand text-white text-sm rounded-sm mb-4 flex overflow-hidden">
-          <NuxtLink to="/" class="p-4 hover:bg-brand-hover">Startseite</NuxtLink>
-          <NuxtLink to="/contact" class="p-4 hover:bg-brand-hover">Kontakt</NuxtLink>
-        </nav>
+        <Nav />
         <slot />
       </div>
     </main>
