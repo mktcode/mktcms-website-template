@@ -13,6 +13,11 @@
   --color-nav-hover-bg: var(--color-brand-darken);
   --color-nav-hover-text: #ffffff;
 
+  --color-subnav-bg: #ffffff;
+  --color-subnav-text: #111111;
+  --color-subnav-hover-bg: var(--color-brand);
+  --color-subnav-hover-text: #ffffff;
+
   --color-nav-mobile-bg: #ffffff;
   --color-nav-mobile-text: #111111;
 
@@ -39,20 +44,30 @@ body {
     @apply p-4 block text-nav-text hover:bg-nav-hover-bg hover:text-nav-hover-text cursor-pointer;
   }
 
-  div:first-child .navitem {
+  div:first-child > .navitem {
     @apply rounded-l-(--base-radius);
   }
 
   .dropdown {
     .subnavitem {
-      @apply px-4 py-2 block hover:bg-red-500 whitespace-nowrap cursor-pointer;
+      @apply flex items-center justify-between px-4 py-2 text-subnav-text hover:bg-subnav-hover-bg hover:text-subnav-hover-text whitespace-nowrap cursor-pointer;
     }
 
-    div:first-child .subnavitem {
+    > div:first-child > .subnavitem {
       @apply rounded-t-(--base-radius);
     }
 
-    div:last-child .subnavitem {
+    > div:last-child > .subnavitem {
+      @apply rounded-b-(--base-radius);
+    }
+  }
+
+  .nested-dropdown {
+    > .subnavitem:first-child {
+      @apply rounded-t-(--base-radius);
+    }
+
+    > .subnavitem:last-child {
       @apply rounded-b-(--base-radius);
     }
   }
