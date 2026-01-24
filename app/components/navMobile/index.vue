@@ -4,6 +4,15 @@ defineProps<{
 }>()
 
 const isOpen = ref(false)
+const openItems = ref<Set<string>>(new Set())
+
+const toggleItem = (label: string) => {
+  if (openItems.value.has(label)) {
+    openItems.value.delete(label)
+  } else {
+    openItems.value.add(label)
+  }
+}
 </script>
 
 <template>
@@ -17,7 +26,7 @@ const isOpen = ref(false)
     </button>
     <Teleport to="body">
       <nav
-        class="fixed z-1000 top-0 right-0 h-screen overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
+        class="bg-white fixed z-1000 top-0 right-0 h-screen overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
         :class="{ 'translate-x-full': !isOpen, 'translate-x-0': isOpen }"
       >
         <div
@@ -26,32 +35,49 @@ const isOpen = ref(false)
           class="relative group"
         >
           <!-- Parent item: clickable if has link, otherwise just a label -->
-          <NuxtLink
-            v-if="item.link"
-            :to="item.link"
-            class="px-4 py-2 bg-white flex justify-between whitespace-nowrap w-full"
-          >
-            {{ item.label }}
-            <span v-if="item.children" class="ml-1">
-              <Icon name="heroicons:chevron-down" class="inline-block" />
-            </span>
-          </NuxtLink>
-          <button
-            v-else
-            class="px-4 py-2 bg-white flex justify-between whitespace-nowrap w-full cursor-pointer text-left"
-          >
-            {{ item.label }}
-            <span v-if="item.children" class="ml-1">
-              <Icon name="heroicons:chevron-down" class="inline-block" />
-            </span>
-          </button>
+          <div class="flex items-center">
+            <NuxtLink
+              v-if="item.link"
+              :to="item.link"
+              class="px-4 py-2 bg-white flex justify-between whitespace-nowrap flex-1"
+            >
+              {{ item.label }}
+            </NuxtLink>
+            <div
+              v-else
+              class="px-4 py-2 bg-white whitespace-nowrap flex-1"
+            >
+              {{ item.label }}
+            </div>
+            <button
+              v-if="item.children"
+              @click="toggleItem(item.label)"
+              class="px-4 py-2 bg-white cursor-pointer"
+            >
+              <Icon
+                name="heroicons:chevron-down"
+                class="inline-block transition-transform duration-300"
+                :class="{ 'rotate-180': openItems.has(item.label) }"
+              />
+            </button>
+          </div>
   
           <!-- Dropdown menu -->
           <ClientOnly>
-            <NavMobileDropdown
-              v-if="item.children"
-              :children="item.children"
-            />
+            <Transition
+              enter-active-class="transition-all duration-300 ease-out"
+              enter-from-class="max-h-0 opacity-0"
+              enter-to-class="max-h-screen opacity-100"
+              leave-active-class="transition-all duration-300 ease-in"
+              leave-from-class="max-h-screen opacity-100"
+              leave-to-class="max-h-0 opacity-0"
+            >
+              <div v-if="item.children && openItems.has(item.label)" class="overflow-hidden">
+                <NavMobileDropdown
+                  :children="item.children"
+                />
+              </div>
+            </Transition>
           </ClientOnly>
         </div>
       </nav>
