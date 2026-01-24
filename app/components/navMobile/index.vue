@@ -19,10 +19,9 @@ const toggleItem = (label: string) => {
   <div>
     <button
       @click="isOpen = !isOpen"
-      class="sm:hidden px-4 py-2 bg-brand text-white rounded-md focus:outline-none"
+      class="sm:hidden px-4 py-2 bg-brand text-white rounded-md focus:outline-none flex items-center justify-center"
     >
-      <span v-if="isOpen">Close Menu</span>
-      <span v-else>Open Menu</span>
+      <Icon name="heroicons:bars-3" />
     </button>
     <Teleport to="body">
       <nav
