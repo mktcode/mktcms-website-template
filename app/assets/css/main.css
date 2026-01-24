@@ -11,3 +11,193 @@
 body {
   @apply font-brand bg-gray-100 text-gray-900;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition-opacity duration-300 ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+
+.mobile-close {
+  @apply hidden;
+}
+
+/* Main Menu */
+.nav-menu {
+  @apply flex list-none m-0 p-0 gap-0;
+}
+
+.nav-item {
+  @apply relative;
+}
+
+.nav-link-wrapper {
+  @apply flex items-center relative;
+}
+
+.nav-link {
+  @apply flex items-center gap-2 transition-colors duration-300 flex-1;
+}
+
+.nav-link:hover {
+  @apply bg-[#555];
+}
+
+.nav-link-button {
+  @apply w-full bg-transparent border-0 cursor-pointer text-left justify-between;
+}
+
+.nav-link-button .arrow {
+  @apply ml-2;
+}
+
+.submenu-toggle {
+  @apply hidden bg-transparent border-0 text-white cursor-pointer px-3 py-4 transition-colors duration-300;
+}
+
+.submenu-toggle:hover {
+  @apply bg-[#555];
+}
+
+.arrow {
+  @apply text-[0.7rem] transition-transform duration-300;
+}
+
+/* Button-style nav links already have inline arrow */
+.nav-link-button .arrow {
+  @apply inline;
+}
+
+/* Submenu Styling */
+.submenu {
+  @apply absolute top-full left-0 bg-[#444] list-none m-0 p-0 min-w-[200px] shadow-[0_4px_6px_rgba(0,0,0,0.2)] opacity-0 invisible -translate-y-2.5 transition-[opacity,transform,visibility] duration-300;
+}
+
+.nav-item:hover > .submenu {
+  @apply opacity-100 visible translate-y-0;
+}
+
+.submenu-item {
+  @apply relative;
+}
+
+.submenu-link-wrapper {
+  @apply flex items-center relative;
+}
+
+.submenu-link {
+  @apply text-white no-underline px-5 py-3 flex items-center justify-between transition-colors duration-300 flex-1;
+}
+
+.submenu-link:hover {
+  @apply bg-[#555];
+}
+
+.submenu-link-button {
+  @apply w-full bg-transparent border-0 cursor-pointer text-left text-white;
+}
+
+.submenu-link-button .arrow {
+  @apply ml-auto;
+}
+
+/* Nested Submenu (appears to the right) */
+.submenu-nested {
+  @apply top-0 left-full ml-0;
+}
+
+.submenu-item:hover > .submenu-nested {
+  @apply opacity-100 visible translate-y-0;
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .mobile-close {
+    @apply block absolute top-4 right-4 bg-transparent border-0 text-white text-[2rem] cursor-pointer p-2 leading-none z-10 w-10 h-10 flex items-center justify-center transition-colors duration-300;
+  }
+
+  .mobile-close:hover {
+    @apply bg-white/10 rounded;
+  }
+
+  .nav-menu {
+    @apply fixed top-0 -right-full flex-col bg-[#333] w-4/5 max-w-[300px] h-screen pt-16 pb-8 transition-[right] duration-300 overflow-y-auto shadow-[-2px_0_5px_rgba(0,0,0,0.3)];
+  }
+
+  .nav-menu.mobile-open {
+    @apply right-0;
+  }
+
+  .nav-item {
+    @apply w-full;
+  }
+
+  .nav-link-wrapper {
+    @apply w-full;
+  }
+
+  .nav-link {
+    @apply px-6 py-4;
+  }
+
+  /* Hide desktop arrow and show toggle button on mobile */
+  .has-submenu > .nav-link-wrapper > .nav-link::after {
+    @apply hidden;
+  }
+
+  .submenu-toggle {
+    @apply block px-6 py-4 bg-black;
+  }
+
+  .nav-item.submenu-open > .nav-link-wrapper > .submenu-toggle .arrow {
+    @apply rotate-180;
+  }
+
+  /* Mobile Submenu */
+  .submenu {
+    @apply static opacity-0 invisible max-h-0 overflow-hidden translate-y-0 shadow-none bg-[#3a3a3a] transition-[max-height,opacity,visibility] duration-300;
+  }
+
+  .nav-item.submenu-open > .submenu {
+    @apply opacity-100 visible max-h-[500px];
+  }
+
+  .submenu-link-wrapper {
+    @apply w-full;
+  }
+
+  .submenu-link {
+    @apply px-6 py-3 pl-10;
+  }
+
+  /* Hide desktop arrow on nested submenus */
+  .submenu-item.has-submenu > .submenu-link-wrapper > .submenu-link::after {
+    @apply hidden;
+  }
+
+  .submenu-item .submenu-toggle {
+    @apply px-6 py-3;
+  }
+
+  .submenu-item.submenu-open > .submenu-link-wrapper > .submenu-toggle .arrow {
+    @apply rotate-90;
+  }
+
+  /* Nested Mobile Submenu */
+  .submenu-nested {
+    @apply bg-[#424242];
+  }
+
+  .submenu-nested .submenu-link {
+    @apply pl-14;
+  }
+
+  .submenu-item.submenu-open > .submenu-nested {
+    @apply opacity-100 visible max-h-[300px];
+  }
+}
