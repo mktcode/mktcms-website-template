@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <nav class="hidden sm:flex gap-1">
+  <nav class="nav hidden text-sm sm:flex gap-1 bg-nav-bg rounded-(--base-radius)">
     <div
       v-for="item in items"
       :key="item.label"
@@ -15,7 +15,7 @@ defineProps<{
       <NuxtLink
         v-if="item.link"
         :to="item.link"
-        class="px-4 py-2 block hover:bg-gray-100 rounded"
+        class="navitem"
       >
         {{ item.label }}
         <span v-if="item.children" class="ml-1">
@@ -24,7 +24,7 @@ defineProps<{
       </NuxtLink>
       <button
         v-else
-        class="px-4 py-2 hover:bg-gray-100 rounded cursor-pointer"
+        class="navitem"
       >
         {{ item.label }}
         <span v-if="item.children" class="ml-1">

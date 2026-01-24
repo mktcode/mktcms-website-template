@@ -2,10 +2,21 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-brand: #123456;
-  --color-brand-hover: #0f2a4d;
-  --color-brand-soft: #e0e7ff;
   --font-brand: 'Inter', sans-serif;
+
+  --color-brand: #123456;
+  --color-brand-darken: #0f2e4d;
+  --color-brand-lighten: #345678;
+
+  --color-nav-bg: var(--color-brand);
+  --color-nav-text: #ffffff;
+  --color-nav-hover-bg: var(--color-brand-darken);
+  --color-nav-hover-text: #ffffff;
+
+  --color-nav-mobile-bg: #ffffff;
+  --color-nav-mobile-text: #111111;
+
+  --base-radius: 0.325rem;
 }
 
 body {
@@ -21,3 +32,44 @@ body {
 .fade-leave-to {
   @apply opacity-0;
 }
+
+/** Navigation */
+.nav {
+  .navitem {
+    @apply p-4 block text-nav-text hover:bg-nav-hover-bg hover:text-nav-hover-text cursor-pointer;
+  }
+
+  div:first-child .navitem {
+    @apply rounded-l-(--base-radius);
+  }
+
+  .dropdown {
+    .subnavitem {
+      @apply px-4 py-2 block hover:bg-red-500 whitespace-nowrap cursor-pointer;
+    }
+
+    div:first-child .subnavitem {
+      @apply rounded-t-(--base-radius);
+    }
+
+    div:last-child .subnavitem {
+      @apply rounded-b-(--base-radius);
+    }
+  }
+
+  .dropdown.submenu-left {
+    left: auto;
+    right: 0;
+  }
+
+  .nested-dropdown.submenu-left {
+    left: auto;
+    right: 100%;
+    transform: translateX(0.5rem); /* translate-x-2 equivalent */
+  }
+
+  .nested-dropdown.submenu-left:is(.group-hover\/nested *) {
+    transform: translateX(0);
+  }
+}
+

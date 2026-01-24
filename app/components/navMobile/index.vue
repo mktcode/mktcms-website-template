@@ -25,7 +25,7 @@ const toggleItem = (label: string) => {
     </button>
     <Teleport to="body">
       <nav
-        class="bg-white fixed z-1000 top-0 right-0 h-screen pt-14 overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
+        class="bg-nav-mobile-bg text-nav-mobile-text fixed z-1000 top-0 right-0 h-screen pt-14 overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
         :class="{ 'translate-x-full': !isOpen, 'translate-x-0': isOpen }"
       >
         <button
