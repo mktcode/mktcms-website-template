@@ -33,7 +33,7 @@ const navItems: Array<MenuItem> = [
         <div class="bg-brand-soft rounded-sm p-4 mb-4">
           <h1 class="text-4xl font-bold">Hallo Welt!</h1>
         </div>
-        <Nav :items="navItems" />
+        <Nav :items="navItems" class="mb-10" />
         <slot />
       </div>
     </main>
