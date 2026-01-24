@@ -1,64 +1,13 @@
 <script setup lang="ts">
-const menuItems: Array<MenuItem> = [
-  {
-    label: 'Home',
-    link: '/'
-  },
-  {
-    label: 'Services',
-    children: [
-      { label: 'Consulting', link: '/services/consulting' },
-      { label: 'Support', link: '/services/support' },
-      { label: 'Training', link: '/services/training' }
-    ]
-  },
-  {
-    label: 'About',
-    link: '/about',
-    children: [
-      { label: 'Our Team', link: '/about/team' },
-      { label: 'History', link: '/about/history' },
-      { label: 'Careers', link: '/about/careers' }
-    ]
-  },
-  {
-    label: 'Contact',
-    link: '/contact'
-  },
-  {
-    label: 'Products',
-    link: '/products',
-    children: [
-      { label: 'Electronics', link: '/products/electronics' },
-      { label: 'Clothing', link: '/products/clothing' },
-      {
-        label: 'Testitem',
-        link: '/products/accessories',
-        children: [
-          { label: 'Bags', link: '/products/accessories/bags' },
-          { label: 'Watches', link: '/products/accessories/watches' },
-          { label: 'Jewelry', link: '/products/accessories/jewelry' }
-        ]
-      },
-      {
-        label: 'Accessories',
-        link: '/products/accessories',
-        children: [
-          { label: 'Bags', link: '/products/accessories/bags' },
-          { label: 'Watches', link: '/products/accessories/watches' },
-          { label: 'Jewelry', link: '/products/accessories/jewelry' }
-        ]
-      },
-      { label: 'Home & Garden', link: '/products/home-garden' }
-    ]
-  },
-]
+defineProps<{
+  items: Array<MenuItem>
+}>()
 </script>
 
 <template>
   <nav class="flex gap-1">
     <div
-      v-for="item in menuItems"
+      v-for="item in items"
       :key="item.label"
       class="relative group"
     >
