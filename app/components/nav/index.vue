@@ -32,6 +32,15 @@ const menuItems: Array<MenuItem> = [
       { label: 'Electronics', link: '/products/electronics' },
       { label: 'Clothing', link: '/products/clothing' },
       {
+        label: 'Testitem',
+        link: '/products/accessories',
+        children: [
+          { label: 'Bags', link: '/products/accessories/bags' },
+          { label: 'Watches', link: '/products/accessories/watches' },
+          { label: 'Jewelry', link: '/products/accessories/jewelry' }
+        ]
+      },
+      {
         label: 'Accessories',
         link: '/products/accessories',
         children: [

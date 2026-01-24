@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import NestedDropdown from './nestedDropdown.vue';
+
 defineProps<{
   children: Array<MenuItem>
 }>()
@@ -52,19 +54,10 @@ onMounted(() => {
       </div>
 
       <!-- Nested dropdown -->
-      <div
+      <NestedDropdown
         v-if="child.children"
-        class="nested-dropdown absolute left-full top-0 pl-1 bg-white shadow-lg rounded opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible min-w-48 z-10 transition-all duration-200 ease-out -translate-x-2 group-hover/nested:translate-x-0"
-      >
-        <NuxtLink
-          v-for="nestedChild in child.children"
-          :key="nestedChild.label"
-          :to="nestedChild.link || '#'"
-          class="px-4 py-2 block hover:bg-gray-100 whitespace-nowrap"
-        >
-          {{ nestedChild.label }}
-        </NuxtLink>
-      </div>
+        :children="child.children"
+      />
     </div>
   </div>
 </template>
@@ -80,8 +73,6 @@ onMounted(() => {
 .nested-dropdown.submenu-left {
   left: auto;
   right: 100%;
-  padding-left: 0;
-  padding-right: 0.25rem; /* pr-1 equivalent */
   transform: translateX(0.5rem); /* translate-x-2 equivalent */
 }
 
