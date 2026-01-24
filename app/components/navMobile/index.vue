@@ -17,7 +17,7 @@ const isOpen = ref(false)
     </button>
     <Teleport to="body">
       <nav
-        class="absolute z-1000 top-0 right-0 h-screen overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
+        class="fixed z-1000 top-0 right-0 h-screen overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
         :class="{ 'translate-x-full': !isOpen, 'translate-x-0': isOpen }"
       >
         <div
