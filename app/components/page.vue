@@ -19,7 +19,7 @@
     <footer class="bg-brand-soft">
       <div class="container max-w-292.5 mx-auto px-4 py-3 bg-brand text-white text-right text-sm">
         <NuxtLink to="/impressum" class="hover:underline">Impressum</NuxtLink>
-        <NuxtLink to="/datenschutz" class="ml-4 hover:underline">Datenschutz</NuxtLink>
+        <NuxtLink to="/datenschutzerklaerung" class="ml-4 hover:underline">Datenschutzerklärung</NuxtLink>
       </div>
     </footer>
   </div>
