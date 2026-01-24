@@ -5,9 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div
-    class="dropdown absolute left-0 pt-1 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible min-w-48 z-10 transition-all duration-200 ease-out -translate-y-2 group-hover:translate-y-0"
-  >
+  <div>
     <div
       v-for="child in children"
       :key="child.label"
@@ -17,20 +15,20 @@ defineProps<{
       <NuxtLink
         v-if="child.link"
         :to="child.link"
-        class="px-4 py-2 block hover:bg-gray-100 whitespace-nowrap"
+        class="px-4 py-2 block bg-gray-50 whitespace-nowrap"
       >
         {{ child.label }}
         <span v-if="child.children" class="ml-1">
-          <Icon name="heroicons:chevron-right" class="inline-block" />
+          <Icon name="heroicons:chevron-down" class="inline-block" />
         </span>
       </NuxtLink>
       <div
         v-else
-        class="px-4 py-2 hover:bg-gray-100 whitespace-nowrap cursor-pointer"
+        class="px-4 py-2 bg-gray-50 whitespace-nowrap cursor-pointer"
       >
         {{ child.label }}
         <span v-if="child.children" class="ml-1">
-          <Icon name="heroicons:chevron-right" class="inline-block" />
+          <Icon name="heroicons:chevron-down" class="inline-block" />
         </span>
       </div>
 
