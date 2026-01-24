@@ -57,10 +57,11 @@ const navItems: Array<MenuItem> = [
 <template>
   <div>
     <header class="bg-brand-soft">
-      <nav class="container max-w-292.5 mx-auto px-4 py-3 bg-brand text-white">
+      <nav class="container flex items-center justify-between max-w-292.5 mx-auto px-4 py-3 bg-brand text-white">
         <NuxtLink to="/" class="font-bold">
           Meine Webseite
         </NuxtLink>
+        <NavMobile :items="navItems" />
       </nav>
     </header>
     <main>
@@ -69,7 +70,6 @@ const navItems: Array<MenuItem> = [
           <h1 class="text-4xl font-bold">Hallo Welt!</h1>
         </div>
         <Nav :items="navItems" />
-        <NavMobile :items="navItems" />
         <slot />
       </div>
     </main>

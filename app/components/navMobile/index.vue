@@ -19,15 +19,22 @@ const toggleItem = (label: string) => {
   <div>
     <button
       @click="isOpen = !isOpen"
-      class="sm:hidden px-4 py-2 bg-brand text-white rounded-md focus:outline-none flex items-center justify-center"
+      class="sm:hidden px-4 py-2 bg-brand text-white rounded-md focus:outline-none flex items-center justify-center cursor-pointer"
     >
-      <Icon name="heroicons:bars-3" />
+      <Icon name="heroicons:bars-3" size="1.5rem" />
     </button>
     <Teleport to="body">
       <nav
-        class="bg-white fixed z-1000 top-0 right-0 h-screen overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
+        class="bg-white fixed z-1000 top-0 right-0 h-screen pt-14 overflow-y-auto max-w-100 w-5/6 flex flex-col sm:hidden transform transition duration-500"
         :class="{ 'translate-x-full': !isOpen, 'translate-x-0': isOpen }"
       >
+        <button
+          @click="isOpen = false"
+          class="absolute top-0 right-0 p-4 focus:outline-none flex items-center justify-center cursor-pointer"
+        >
+          <Icon name="heroicons:x-mark" size="1.5rem" />
+        </button>
+
         <div
           v-for="item in items"
           :key="item.label"
@@ -38,20 +45,21 @@ const toggleItem = (label: string) => {
             <NuxtLink
               v-if="item.link"
               :to="item.link"
-              class="px-4 py-2 bg-white flex justify-between whitespace-nowrap flex-1"
+              class="px-4 py-2 bg-gray-50 flex justify-between whitespace-nowrap flex-1"
             >
               {{ item.label }}
             </NuxtLink>
             <div
               v-else
-              class="px-4 py-2 bg-white whitespace-nowrap flex-1"
+              class="px-4 py-2 bg-gray-50 whitespace-nowrap flex-1 cursor-pointer"
+              @click="toggleItem(item.label)"
             >
               {{ item.label }}
             </div>
             <button
               v-if="item.children"
               @click="toggleItem(item.label)"
-              class="px-4 py-2 bg-white cursor-pointer"
+              class="px-4 py-2 bg-gray-100 cursor-pointer"
             >
               <Icon
                 name="heroicons:chevron-down"
