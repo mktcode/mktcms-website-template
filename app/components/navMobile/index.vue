@@ -2,10 +2,12 @@
 defineProps<{
   items: Array<MenuItem>
 }>()
+
+const isOpen = ref(false)
 </script>
 
 <template>
-  <nav class="hidden sm:flex gap-1">
+  <nav class="gap-1 flex flex-col sm:hidden">
     <div
       v-for="item in items"
       :key="item.label"
@@ -24,7 +26,7 @@ defineProps<{
       </NuxtLink>
       <button
         v-else
-        class="px-4 py-2 hover:bg-gray-100 rounded cursor-pointer"
+        class="px-4 py-2 hover:bg-gray-100 rounded cursor-pointer w-full text-left"
       >
         {{ item.label }}
         <span v-if="item.children" class="ml-1">
@@ -34,7 +36,7 @@ defineProps<{
 
       <!-- Dropdown menu -->
       <ClientOnly>
-        <NavDropdown
+        <NavMobileDropdown
           v-if="item.children"
           :children="item.children"
         />

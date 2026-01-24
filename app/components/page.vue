@@ -70,6 +70,7 @@ const navItems: Array<MenuItem> = [
           <h1 class="text-4xl font-bold">Hallo Welt!</h1>
         </div>
         <Nav :items="navItems" />
+        <NavMobile :items="navItems" />
         <slot />
       </div>
     </main>
