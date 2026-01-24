@@ -10,7 +10,7 @@ defineProps<{
       v-for="nestedChild in children"
       :key="nestedChild.label"
       :to="nestedChild.link || '#'"
-      class="px-4 py-2 block bg-gray-100 whitespace-nowrap"
+      class="px-4 py-2 block bg-white/5 whitespace-nowrap"
     >
       {{ nestedChild.label }}
     </NuxtLink>

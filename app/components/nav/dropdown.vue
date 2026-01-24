@@ -23,7 +23,7 @@ onMounted(() => {
   <div
     ref="dropdownRef"
     :class="{ 'submenu-left': isSubmenuLeft }"
-    class="dropdown absolute left-0 -mt-1 bg-subnav-bg shadow-lg rounded-(--base-radius) opacity-0 invisible group-hover:opacity-100 group-hover:visible min-w-48 z-10 transition-all duration-200 ease-out -translate-y-2 group-hover:translate-y-0"
+    class="dropdown absolute left-0 -mt-1 bg-subnav-bg shadow-lg rounded-(--base-radius) opacity-0 invisible group-hover:opacity-100 group-hover:visible min-w-48 z-10 transition-all duration-200 ease-out translate-y-2 group-hover:translate-y-0"
   >
     <div
       v-for="child in children"

@@ -38,20 +38,20 @@ const toggleItem = (label: string) => {
         <div
           v-for="item in items"
           :key="item.label"
-          class="relative group"
+          class="relative group mb-px"
         >
           <!-- Parent item: clickable if has link, otherwise just a label -->
           <div class="flex items-center">
             <NuxtLink
               v-if="item.link"
               :to="item.link"
-              class="px-4 py-2 bg-gray-50 flex justify-between whitespace-nowrap flex-1"
+              class="px-4 py-2 bg-nav-mobile-item-bg text-nav-mobile-text flex justify-between whitespace-nowrap flex-1"
             >
               {{ item.label }}
             </NuxtLink>
             <div
               v-else
-              class="px-4 py-2 bg-gray-50 whitespace-nowrap flex-1 cursor-pointer"
+              class="px-4 py-2 bg-nav-mobile-item-bg text-nav-mobile-text whitespace-nowrap flex-1 cursor-pointer"
               @click="toggleItem(item.label)"
             >
               {{ item.label }}
@@ -59,7 +59,7 @@ const toggleItem = (label: string) => {
             <button
               v-if="item.children"
               @click="toggleItem(item.label)"
-              class="px-4 py-2 bg-gray-100 cursor-pointer"
+              class="px-4 py-2 bg-nav-mobile-trigger-bg text-nav-mobile-text cursor-pointer"
             >
               <Icon
                 name="heroicons:chevron-down"

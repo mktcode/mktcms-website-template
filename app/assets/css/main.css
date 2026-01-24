@@ -18,8 +18,12 @@
   --color-subnav-hover-bg: var(--color-brand);
   --color-subnav-hover-text: #ffffff;
 
-  --color-nav-mobile-bg: #ffffff;
-  --color-nav-mobile-text: #111111;
+  --color-nav-mobile-bg: var(--color-brand);
+  --color-nav-mobile-text: #ffffff;
+  --color-nav-mobile-item-bg: var(--color-brand-darken);
+  --color-nav-mobile-trigger-bg: var(--color-brand-lighten);
+  --color-nav-mobile-dropdown-bg: var(--color-brand-lighten);
+
 
   --base-radius: 0.325rem;
 }

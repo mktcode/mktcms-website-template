@@ -15,7 +15,7 @@ const toggleItem = (label: string) => {
 </script>
 
 <template>
-  <div>
+  <div class="bg-nav-mobile-dropdown-bg">
     <div
       v-for="child in children"
       :key="child.label"
@@ -26,21 +26,22 @@ const toggleItem = (label: string) => {
         <NuxtLink
           v-if="child.link"
           :to="child.link"
-          class="px-4 py-2 bg-gray-50 whitespace-nowrap flex-1"
+          class="px-4 py-2 text-nav-mobile-text whitespace-nowrap flex-1"
         >
           {{ child.label }}
         </NuxtLink>
         <div
           v-else
-          class="px-4 py-2 bg-gray-50 whitespace-nowrap flex-1"
+          class="px-4 py-2 text-nav-mobile-text whitespace-nowrap flex-1"
         >
           {{ child.label }}
         </div>
         <button
           v-if="child.children"
           @click="toggleItem(child.label)"
-          class="px-4 py-2 bg-gray-50 cursor-pointer"
+          class="px-4 py-2 bg-nav-mobile-trigger-bg text-nav-mobile-text cursor-pointer relative"
         >
+          <div class="absolute inset-0 bg-white/5" />
           <Icon
             name="heroicons:chevron-down"
             class="inline-block transition-transform duration-300"
