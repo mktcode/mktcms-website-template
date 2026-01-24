@@ -27,10 +27,6 @@ body {
   @apply flex list-none m-0 p-0 gap-0;
 }
 
-.nav-item {
-  @apply relative;
-}
-
 .nav-link-wrapper {
   @apply flex items-center relative;
 }
@@ -118,10 +114,6 @@ body {
 
   .nav-menu.mobile-open {
     @apply right-0;
-  }
-
-  .nav-item {
-    @apply w-full;
   }
 
   .nav-link-wrapper {
