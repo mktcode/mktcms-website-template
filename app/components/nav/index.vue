@@ -82,24 +82,3 @@ const menuItems: Array<MenuItem> = [
     </div>
   </nav>
 </template>
-
-<style scoped>
-/* Class to make first-level dropdown appear on the right side (aligned to right edge) */
-.dropdown.submenu-left {
-  left: auto;
-  right: 0;
-}
-
-/* Class to make nested submenus appear on the left instead of right */
-.nested-dropdown.submenu-left {
-  left: auto;
-  right: 100%;
-  padding-left: 0;
-  padding-right: 0.25rem; /* pr-1 equivalent */
-  transform: translateX(0.5rem); /* translate-x-2 equivalent */
-}
-
-.nested-dropdown.submenu-left:is(.group-hover\/nested *) {
-  transform: translateX(0);
-}
-</style>
