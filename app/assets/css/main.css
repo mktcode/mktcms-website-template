@@ -22,11 +22,6 @@ body {
   @apply opacity-0;
 }
 
-
-.mobile-close {
-  @apply hidden;
-}
-
 /* Main Menu */
 .nav-menu {
   @apply flex list-none m-0 p-0 gap-0;
@@ -117,14 +112,6 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 640px) {
-  .mobile-close {
-    @apply block absolute top-4 right-4 bg-transparent border-0 text-white text-[2rem] cursor-pointer p-2 leading-none z-10 w-10 h-10 flex items-center justify-center transition-colors duration-300;
-  }
-
-  .mobile-close:hover {
-    @apply bg-white/10 rounded;
-  }
-
   .nav-menu {
     @apply fixed top-0 -right-full flex-col bg-[#333] w-4/5 max-w-[300px] h-screen pt-16 pb-8 transition-[right] duration-300 overflow-y-auto shadow-[-2px_0_5px_rgba(0,0,0,0.3)];
   }

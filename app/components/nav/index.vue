@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const mobileMenuOpen = ref(false)
-const openSubmenus = ref<Set<string>>(new Set())
+const { mobileMenuOpen, toggleMobileMenu, toggleSubmenu, isSubmenuOpen } = useMenu()
 
 type MenuItem = {
   label: string
@@ -55,41 +52,15 @@ const menuItems: Array<MenuItem> = [
     link: '/contact'
   }
 ]
-
-const toggleMobileMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value
-}
-
-const toggleSubmenu = (key: string, event: Event) => {
-  event.preventDefault()
-  event.stopPropagation()
-  if (openSubmenus.value.has(key)) {
-    openSubmenus.value.delete(key)
-  } else {
-    openSubmenus.value.add(key)
-  }
-  openSubmenus.value = new Set(openSubmenus.value)
-}
-
-const isSubmenuOpen = (key: string) => {
-  return openSubmenus.value.has(key)
-}
 </script>
 
 <template>
   <nav class="relative z-1000">
     <div class="flex items-center justify-between">
-      <!-- Mobile Menu Toggle -->
-      <button class="flex sm:hidden flex-col bg-transparent border-0 cursor-pointer p-2 text-white" @click="toggleMobileMenu" :aria-expanded="mobileMenuOpen">
-        <Icon name="heroicons:bars-3" size="1.5rem" />
-      </button>
+      <NavMobileToggle :isOpen="mobileMenuOpen" @click="toggleMobileMenu" />
 
-      <!-- Menu -->
       <ul class="nav-menu" :class="{ 'mobile-open': mobileMenuOpen }">
-        <!-- Mobile Close Button -->
-        <button class="mobile-close" @click="toggleMobileMenu" aria-label="Close menu">
-          <span>✕</span>
-        </button>
+        <NavMobileClose @click="toggleMobileMenu" />
         
         <li v-for="(item, index) in menuItems" :key="index" class="nav-item" :class="{ 'has-submenu': item.submenu, 'submenu-open': isSubmenuOpen(`item-${index}`) }">
           <!-- If item has no link, make entire button toggle submenu -->
