@@ -2,10 +2,27 @@
 defineProps<{
   children: Array<MenuItem>
 }>()
+
+const dropdownRef = ref<HTMLElement | null>(null)
+const isSubmenuLeft = ref(false)
+
+onMounted(() => {
+  if (dropdownRef.value) {
+    const rect = dropdownRef.value.getBoundingClientRect()
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth
+
+    // If the dropdown would overflow the viewport, position it to the left
+    if (rect.right > viewportWidth) {
+      isSubmenuLeft.value = true
+    }
+  }
+})
 </script>
 
 <template>
   <div
+    ref="dropdownRef"
+    :class="{ 'submenu-left': isSubmenuLeft }"
     class="dropdown absolute left-0 pt-1 bg-white shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible min-w-48 z-10 transition-all duration-200 ease-out -translate-y-2 group-hover:translate-y-0"
   >
     <div

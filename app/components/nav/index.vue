@@ -75,10 +75,12 @@ const menuItems: Array<MenuItem> = [
       </button>
 
       <!-- Dropdown menu -->
-      <NavDropdown
-        v-if="item.children"
-        :children="item.children"
-      />
+      <ClientOnly>
+        <NavDropdown
+          v-if="item.children"
+          :children="item.children"
+        />
+      </ClientOnly>
     </div>
   </nav>
 </template>
