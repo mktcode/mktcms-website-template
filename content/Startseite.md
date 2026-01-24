@@ -1,3 +1,3 @@
 # Moin!
 
-This website is currently under construction.
+Dies ist die Startseite. Willkommen auf unserer Website!

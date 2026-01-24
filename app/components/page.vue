@@ -5,50 +5,14 @@ const navItems: Array<MenuItem> = [
     link: '/'
   },
   {
-    label: 'Services',
-    children: [
-      { label: 'Consulting', link: '/services/consulting' },
-      { label: 'Support', link: '/services/support' },
-      { label: 'Training', link: '/services/training' }
-    ]
+    label: 'Kontakt',
+    link: '/kontakt'
   },
   {
-    label: 'About',
-    link: '/about',
+    label: 'Rechtliches',
     children: [
-      { label: 'Our Team', link: '/about/team' },
-      { label: 'History', link: '/about/history' },
-      { label: 'Careers', link: '/about/careers' }
-    ]
-  },
-  {
-    label: 'Contact',
-    link: '/contact'
-  },
-  {
-    label: 'Products',
-    link: '/products',
-    children: [
-      { label: 'Electronics', link: '/products/electronics' },
-      { label: 'Clothing', link: '/products/clothing' },
-      {
-        label: 'Testitem',
-        children: [
-          { label: 'Bags', link: '/products/accessories/bags' },
-          { label: 'Watches', link: '/products/accessories/watches' },
-          { label: 'Jewelry', link: '/products/accessories/jewelry' }
-        ]
-      },
-      {
-        label: 'Accessories',
-        link: '/products/accessories',
-        children: [
-          { label: 'Bags', link: '/products/accessories/bags' },
-          { label: 'Watches', link: '/products/accessories/watches' },
-          { label: 'Jewelry', link: '/products/accessories/jewelry' }
-        ]
-      },
-      { label: 'Home & Garden', link: '/products/home-garden' }
+      { label: 'Impressum', link: '/impressum' },
+      { label: 'Datenschutzerklärung', link: '/datenschutzerklaerung' },
     ]
   },
 ]
