@@ -15,7 +15,7 @@ defineProps<{
       <NuxtLink
         v-if="child.link"
         :to="child.link"
-        class="px-4 py-2 block bg-gray-50 whitespace-nowrap"
+        class="px-4 py-2 flex justify-between bg-gray-50 whitespace-nowrap"
       >
         {{ child.label }}
         <span v-if="child.children" class="ml-1">
@@ -24,7 +24,7 @@ defineProps<{
       </NuxtLink>
       <div
         v-else
-        class="px-4 py-2 bg-gray-50 whitespace-nowrap cursor-pointer"
+        class="px-4 py-2 flex justify-between bg-gray-50 whitespace-nowrap cursor-pointer"
       >
         {{ child.label }}
         <span v-if="child.children" class="ml-1">

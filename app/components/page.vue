@@ -33,7 +33,6 @@ const navItems: Array<MenuItem> = [
       { label: 'Clothing', link: '/products/clothing' },
       {
         label: 'Testitem',
-        link: '/products/accessories',
         children: [
           { label: 'Bags', link: '/products/accessories/bags' },
           { label: 'Watches', link: '/products/accessories/watches' },
