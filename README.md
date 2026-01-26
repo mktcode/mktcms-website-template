@@ -26,6 +26,7 @@ Edit `nuxt.config.ts`:
 - og-tags
 - robots
 - (per page meta tags in `pages/`)
+- 404 page
 
 Edit errors page: `error.vue`
 
