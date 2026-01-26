@@ -1,7 +1,25 @@
+<script setup lang="ts">
+import type { NuxtError } from '#app'
+
+defineProps({
+  error: Object as () => NuxtError,
+})
+
+const toHome = () => clearError({ redirect: '/' })
+</script>
+
 <template>
-  <div>
+  <div class="h-screen flex items-center justify-center">
     <NuxtRouteAnnouncer />
-    <h1>Fehlerseite</h1>
-    <NuxtLink to="/">Zur Startseite</NuxtLink>
+
+    <div class="text-center prose prose-lg">
+      <h1>
+        Inhalt nicht gefunden
+      </h1>
+      <p>
+        Der angeforderte Inhalt konnte nicht gefunden werden, weil er möglicherweise gelöscht oder verschoben wurde oder nie existiert hat.
+      </p>
+      <NuxtLink @click="toHome" class="button">Zur Startseite</NuxtLink>
+    </div>
   </div>
 </template>
