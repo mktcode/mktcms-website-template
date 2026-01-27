@@ -1,6 +1,12 @@
 <script setup lang="ts">
+const siteUrl = useSiteUrl()
 const content = await useMdContent('Startseite.md')
 const posts = await useMdContents('Beiträge')
+
+const images = [
+  `${siteUrl}/api/content/slideshow1.jpg`,
+  `${siteUrl}/api/content/slideshow2.jpg`,
+]
 </script>
 
 <template>
