@@ -17,7 +17,7 @@ git branch -m main
 # Publish to GitHub as private repository
 ```
 
-## Configuration
+## Configuration / Checklist
 
 Edit `nuxt.config.ts`:
 
@@ -25,8 +25,9 @@ Edit `nuxt.config.ts`:
 - title, description
 - og-tags
 - robots
-- (per page meta tags in `pages/`)
+- per page meta tags in `pages/`
 - 404 page
+- richtiger Font überall
 
 Edit errors page: `error.vue`
 
