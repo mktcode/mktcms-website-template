@@ -26,10 +26,9 @@ Edit `nuxt.config.ts`:
 - og-tags
 - robots
 - per page meta tags in `pages/`
-- 404 page
-- richtiger Font überall
-
-Edit errors page: `error.vue`
+- errors page: `error.vue`
+- correct Font everywhere
+- mobile optimization
 
 # Deployment
 
