@@ -9,6 +9,7 @@ git clone git@github.com:mktcode/mktcms-website-template.git ${DOMAIN_NAME}
 cd ${DOMAIN_NAME}
 npm i
 cp .env.example .env
+cp -r content .storage
 rm -rf .git
 git init
 git add .
