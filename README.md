@@ -30,6 +30,7 @@ Edit `nuxt.config.ts`:
 - errors page: `error.vue`
 - correct Font everywhere
 - mobile optimization
+- ensure urls match old website
 
 # Deployment
 
