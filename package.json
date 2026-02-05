@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "pagegrab": "tsx pagegrab/index.ts"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.12.1",
@@ -30,6 +31,10 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^25.0.6"
+    "@types/node": "^25.0.6",
+    "@types/turndown": "^5.0.6",
+    "cheerio": "^1.0.0",
+    "tsx": "^4.20.5",
+    "turndown": "^7.2.0"
   }
 }
