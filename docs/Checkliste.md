@@ -17,6 +17,7 @@
 - Werden "Bearbeiten"-Buttons (für Admin) auf der Seite angezeigt (wenn gewünscht)?
 - Google Lighthouse-Score: Wie sieht es mit Performance, Accessibility, Best Practices und SEO aus?
 - Ist die Sprache richtig gesetzt? (<html lang="de">)
+- Datenschutz: Fonts, Karten, etc. lokal gehostet?
 
 ## Live gehen
 
