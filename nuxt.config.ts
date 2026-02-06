@@ -23,6 +23,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'de',
+      },
       title: 'Neue Website',
       meta: [
         {
