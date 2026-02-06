@@ -14,6 +14,7 @@
 - Sind alle Seitenpfade noch so wie auf der alten Seite? (Wichtig für vorhandene Links auf anderen Websites)
 - Ist die Administration aufgeräumt und übersichtlich?
 - Werden "Bearbeiten"-Buttons (für Admin) auf der Seite angezeigt (wenn gewünscht)?
+- Google Lighthouse-Score: Wie sieht es mit Performance, Accessibility, Best Practices und SEO aus?
 
 ## Live gehen
 
