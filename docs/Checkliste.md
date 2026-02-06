@@ -9,7 +9,7 @@
 - Werden Karten richtig angezeigt?
 - Wird das richtige Favicon im Browser angezeigt?
 - Hat jede Seite/Unterseite den richtigen Titel und die richtige Beschreibung?
-- Wie sieht es aus, wenn man einen Link zur Seite teilt? (WhatsApp, Twitter, Facebook, etc.)
+- Wie sieht es aus, wenn man einen Link zur Seite (Startseite/Unterseiten) teilt? (WhatsApp, Twitter, Facebook, etc.)
 - Ist die Fehlerseite ansprechend gestaltet?
 - Sind alle Seitenpfade noch so wie auf der alten Seite? (Wichtig für vorhandene Links auf anderen Websites)
 - Ist die Administration aufgeräumt und übersichtlich?
