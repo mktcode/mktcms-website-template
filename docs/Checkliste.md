@@ -7,6 +7,7 @@
 - Sind alle Bilder korrekt eingebunden und kommen nicht mehr vom alten Server?
 - Gehen alle Links?
 - Sind alle Formulare funktionsfähig?
+  - Richtiger SMTP-Account? Richtiger Empfänger?
 - Werden Karten richtig angezeigt?
 - Wird das richtige Favicon im Browser angezeigt?
 - Hat jede Seite/Unterseite den richtigen Titel und die richtige Beschreibung?
@@ -22,5 +23,5 @@
 
 - Robots.txt anpassen
 - `SITE_URL` in `environment=...` anpassen
-- DNS-Einträge anpassen (www. nicht vergessen)
+- DNS-Einträge anpassen (inkl. www.)
 - SSL-Zertifikat erstellen
