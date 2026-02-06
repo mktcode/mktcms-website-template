@@ -1,6 +1,7 @@
 # Checkliste
 
 - Ist das Layout auf allen Seiten konsistent und nah genug am Original?
+  - Sind unterschiede dokumentiert bzw. kommuniziert?
 - Wie sieht die Seite mobil aus?
 - Sind alle Inhalte korrekt übertragen worden?
 - Sind alle Bilder korrekt eingebunden und kommen nicht mehr vom alten Server?
