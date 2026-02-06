@@ -15,6 +15,7 @@
 - Ist die Administration aufgeräumt und übersichtlich?
 - Werden "Bearbeiten"-Buttons (für Admin) auf der Seite angezeigt (wenn gewünscht)?
 - Google Lighthouse-Score: Wie sieht es mit Performance, Accessibility, Best Practices und SEO aus?
+- Ist die Sprache richtig gesetzt? (<html lang="de">)
 
 ## Live gehen
 
