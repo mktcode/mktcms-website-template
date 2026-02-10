@@ -22,7 +22,7 @@
     "@vueuse/core": "^14.1.0",
     "eslint": "^9.39.2",
     "marked": "^17.0.1",
-    "mktcms": "^0.1.36",
+    "mktcms": "^0.1.41",
     "nuxt": "^4.2.2",
     "reka-ui": "^2.7.0",
     "tailwindcss": "^4.1.18",
