@@ -18,12 +18,6 @@ git branch -m main
 # Publish to GitHub as private repository
 ```
 
-## PageGrab
-
-Fetch page content and store it in `.storage`.
-
-`npm run pagegrab -- --domain https://domain.de --selector "#content"`
-
 ## Configuration / Checklist
 
 Edit `nuxt.config.ts`:
