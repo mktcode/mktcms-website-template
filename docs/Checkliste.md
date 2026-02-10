@@ -7,7 +7,7 @@
 - Sind alle Inhalte korrekt übertragen worden?
 - Sind alle Bilder korrekt eingebunden und kommen nicht mehr vom alten Server?
 - Gehen alle Links?
-- Sind alle Formulare funktionsfähig?
+- Sind alle Formulare funktionsfähig, inkl. Kopie an Absender (wenn gewünscht)?
 - Werden Karten richtig angezeigt?
 - Wird das richtige Favicon im Browser angezeigt?
 - Hat jede Seite/Unterseite den richtigen Titel und die richtige Beschreibung?
@@ -22,7 +22,7 @@
 
 ## Live gehen
 
-- Richtiger SMTP-Account / Empfänger für Formulare?
+- Richtiger SMTP-Account / Empfänger für Formulare? (Kopie an Absender?)
 - Robots.txt anpassen
 - `SITE_URL` in `environment=...` anpassen
 - DNS-Einträge anpassen (inkl. www.)
