@@ -95,3 +95,7 @@ body {
 .button  {
   @apply bg-brand text-white px-4 py-2 rounded-(--base-radius) hover:bg-brand-darken cursor-pointer transition-colors no-underline;
 }
+
+.leaflet-control-attribution {
+  display: none;
+}
