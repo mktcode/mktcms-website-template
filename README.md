@@ -18,20 +18,6 @@ git branch -m main
 # Publish to GitHub as private repository
 ```
 
-## Configuration / Checklist
-
-Edit `nuxt.config.ts`:
-
-- favicon
-- title, description
-- og-tags
-- robots
-- per page meta tags in `pages/`
-- errors page: `error.vue`
-- correct Font everywhere
-- mobile optimization
-- ensure urls match old website
-
 # Deployment
 
 On the server (set up with `init.yml` from [`mktcode/mktcms-server`](https://github.com/mktcode/mktcms-server)) use the `websitenew` command:
