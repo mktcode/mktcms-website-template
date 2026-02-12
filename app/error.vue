@@ -3,10 +3,8 @@ const toHome = () => clearError({ redirect: '/' })
 </script>
 
 <template>
-  <div class="h-screen flex items-center justify-center">
-    <NuxtRouteAnnouncer />
-
-    <div class="text-center prose prose-lg">
+  <Page>
+    <div class="markdown-content">
       <h1>
         Inhalt nicht gefunden
       </h1>
@@ -15,5 +13,5 @@ const toHome = () => clearError({ redirect: '/' })
       </p>
       <NuxtLink @click="toHome" class="button">Zur Startseite</NuxtLink>
     </div>
-  </div>
+  </Page>
 </template>
