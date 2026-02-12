@@ -43,4 +43,23 @@ export default defineNuxtConfig({
       ],
     },
   },
+  mdc: {
+    components: {
+      map: {
+        Aufklappen: 'collapsible',
+        Spalten2: 'cols2',
+        Karte: 'directions',
+        Inhalt: 'md',
+        Galerie: 'slideshow',
+      }
+    },
+    headings: {
+      anchorLinks: false,
+    },
+  },
+  fonts: {
+    defaults: {
+      weights: [300, 400, 700, 800],
+    },
+  },
 })
