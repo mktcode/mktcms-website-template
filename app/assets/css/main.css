@@ -102,4 +102,16 @@ body:has(#mktcms-page) {
   .leaflet-control-attribution {
     display: none;
   }
+
+  .image-left {
+    @apply md:float-left md:mr-4 md:mb-2 mt-0 pr-4;
+  }
+  
+  .image-right {
+    @apply md:float-right md:ml-4 md:mb-2 mt-0;
+  }
+  
+  .clear {
+    @apply clear-both;
+  }
 }
