@@ -45,6 +45,10 @@ body:has(#mktcms-page) {
   .nav {
     .navitem {
       @apply p-4 block text-nav-text hover:bg-nav-hover-bg hover:text-nav-hover-text cursor-pointer;
+
+      &.router-link-active {
+        @apply bg-nav-hover-bg text-nav-hover-text;
+      }
     }
   
     div:first-child > .navitem {
