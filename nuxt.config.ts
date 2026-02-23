@@ -44,6 +44,9 @@ export default defineNuxtConfig({
       ],
     },
   },
+  robots: {
+    disallow: ['/api/admin/*', '/admin/*'],
+  },
   mdc: {
     components: {
       map: {
