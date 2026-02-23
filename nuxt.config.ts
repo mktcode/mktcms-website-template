@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/mdc',
     '@nuxtjs/leaflet',
+    '@nuxtjs/robots',
     'mktcms',
   ],
   css: ['./app/assets/css/main.css'],
