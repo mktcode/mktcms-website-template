@@ -1,49 +1,47 @@
-# Create a new Website
+# MktCMS Website Template (Nuxt 4)
+
+This is the Nuxt 4 website template used by MktCMS.
+
+
+## Create a new website repo (minimal)
+
+You can use this repository as a template directly from GitHub by clicking “Use this template” to create your own repo, or clone it manually as shown below:
 
 ```bash
 DOMAIN_NAME=customerxyz.mydomain.com
-```
 
-```bash
-git clone git@github.com:mktcode/mktcms-website-template.git ${DOMAIN_NAME}
-cd ${DOMAIN_NAME}
+git clone git@github.com:mktcode/mktcms-website-template.git "${DOMAIN_NAME}"
+cd "${DOMAIN_NAME}"
+
 npm i
 cp .env.example .env
 cp -r content .storage
+
+# re-init git
 rm -rf .git
 git init
 git add .
 git commit -m "Initial commit"
 git branch -m main
-# Publish to GitHub as private repository
+
+# publish this repo (usually private)
 ```
 
-# Deployment
+## Deployment
 
-On the server (set up with `init.yml` from [`mktcode/mktcms-server`](https://github.com/mktcode/mktcms-server)) use the `websitenew` command:
+Use the server bootstrap + CLI from https://github.com/mktcode/mktcms-server.
+
+Example (after the server is initialized with `init.yml` from that repo):
 
 ```bash
-DOMAIN_NAME=customerxyz.mydomain.com
-websitenew ${DOMAIN_NAME} 3000
+# create site (nginx + supervisor + clone + build)
+mktcms new customerxyz.mydomain.com 3000 owner/your-website-repo
+
+# enable HTTPS (Let's Encrypt)
+mktcms cert customerxyz.mydomain.com admin@customerxyz.mydomain.com
+
+# update later
+mktcms update customerxyz.mydomain.com
 ```
 
-Set A-Record (also for `www.`) pointing to the server IP and obtain SSL certificate using `websitecert`:
-
-```bash
-websitecert ${DOMAIN_NAME}
-```
-
-Adjust environment variables in the service configuration as needed and restart the application:
-
-```bash
-vim /etc/supervisor/conf.d/${DOMAIN_NAME}.conf
-supervisorctl reread
-supervisorctl update
-supervisorctl restart ${DOMAIN_NAME}
-```
-
-### Update
-
-```bash
-websiteupdate ${DOMAIN_NAME}
-```
+For the full command reference and server setup details, see: https://github.com/mktcode/mktcms-server
