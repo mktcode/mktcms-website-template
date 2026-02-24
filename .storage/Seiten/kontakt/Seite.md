@@ -3,11 +3,16 @@
 ---
 # Kontakt
 
-::karte
+::Karte
 ---
-text: "Gertrudenstraße 23a, 49074 Osnabrück"
 zoom: 15
-lat: 52.28102309206863
-lng: 8.0499503645702
+lat: 52.456
+lng: 8.123
+height: 400
+markers:
+  - lat: 52.456
+    lng: 8.123
+    open: true
+    text: "<strong>HTML<br>supported"
 ---
 ::
