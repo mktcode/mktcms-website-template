@@ -1,6 +1,6 @@
 # MktCMS Website Template (Nuxt 4)
 
-This is the Nuxt 4 website template used by MktCMS.
+This is a Nuxt 4 website template using [MktCMS](https://github.com/mktcode/mktcms).
 
 
 ## Create a new website repo (minimal)
