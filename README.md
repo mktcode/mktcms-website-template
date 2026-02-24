@@ -3,7 +3,7 @@
 This is a Nuxt 4 website template using [MktCMS](https://github.com/mktcode/mktcms).
 
 
-## Create a new website repo (minimal)
+## Create a new website repo
 
 You can use this repository as a template directly from GitHub by clicking “Use this template” to create your own repo, or clone it manually as shown below:
 
