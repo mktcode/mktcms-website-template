@@ -36,6 +36,9 @@ Example (after the server is initialized with `init.yml` from that repo):
 # create site (nginx + supervisor + clone + build)
 mktcms new customerxyz.mydomain.com 3000 owner/your-website-repo
 
+# edit env vars for service
+vim /etc/supervisor/conf.d/customerxyz.mydomain.com.conf
+
 # enable HTTPS (Let's Encrypt)
 mktcms cert customerxyz.mydomain.com admin@customerxyz.mydomain.com
 
