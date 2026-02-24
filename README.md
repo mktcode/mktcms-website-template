@@ -15,7 +15,6 @@ cd "${DOMAIN_NAME}"
 
 npm i
 cp .env.example .env
-cp -r content .storage
 
 # re-init git
 rm -rf .git
