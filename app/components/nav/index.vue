@@ -1,13 +1,7 @@
-<script setup lang="ts">
-defineProps<{
-  items: Array<MenuItem>
-}>()
-</script>
-
 <template>
   <nav class="nav hidden text-sm sm:flex gap-1 bg-nav-bg rounded-(--base-radius)">
     <div
-      v-for="item in items"
+      v-for="item in navItems"
       :key="item.label"
       class="relative group"
     >

@@ -5,7 +5,7 @@
         <NuxtLink to="/" class="font-bold">
           Meine Webseite
         </NuxtLink>
-        <NavMobile :items="navItems" />
+        <NavMobile />
       </nav>
     </header>
     <main>
@@ -13,7 +13,7 @@
         <div class="mb-4">
           <h1 class="text-4xl font-bold">Hallo Welt!</h1>
         </div>
-        <Nav :items="navItems" class="mb-10" />
+        <Nav class="mb-10" />
         <slot />
       </div>
     </main>

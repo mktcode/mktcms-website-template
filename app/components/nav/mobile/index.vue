@@ -1,8 +1,4 @@
 <script setup lang="ts">
-defineProps<{
-  items: Array<MenuItem>
-}>()
-
 const isOpen = ref(false)
 const openItems = ref<Set<string>>(new Set())
 
@@ -37,7 +33,7 @@ const toggleItem = (label: string) => {
           </button>
   
           <div
-            v-for="item in items"
+            v-for="item in navItems"
             :key="item.label"
             class="relative group mb-px"
           >
