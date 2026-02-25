@@ -66,4 +66,20 @@ export default defineNuxtConfig({
       weights: [300, 400, 700, 800],
     },
   },
+  hooks: {
+    'pages:extend'(pages) {
+      const updateDateRoutePath = (routes: Array<{ file?: string, path: string, children?: Array<{ file?: string, path: string, children?: any[] }> }>) => {
+        for (const route of routes) {
+          if (route.file?.endsWith('/app/pages/[year]/[month]/[day]/[...slug].vue')) {
+            route.path = '/:year(\\d{4})/:month(0[1-9]|1[0-2])/:day(0[1-9]|[12]\\d|3[01])/:slug(.+)'
+          }
+          if (route.children?.length) {
+            updateDateRoutePath(route.children as any)
+          }
+        }
+      }
+
+      updateDateRoutePath(pages as any)
+    },
+  },
 })
