@@ -23,6 +23,11 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    }
+  },
   app: {
     head: {
       htmlAttrs: {
