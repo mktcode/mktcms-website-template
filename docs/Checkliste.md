@@ -24,6 +24,6 @@
 
 - Richtiger SMTP-Account / Empfänger für Formulare? (Kopie an Absender?)
 - Robots.txt anpassen
-- `SITE_URL` in `environment=...` anpassen
+- `SITE_URL` und `NUXT_SITE_ENV` in `environment=...` anpassen
 - DNS-Einträge anpassen (inkl. www.), alte Einträge löschen (*.mktcode.de)
 - SSL-Zertifikat erstellen
