@@ -56,7 +56,7 @@ export default defineNuxtConfig({
     components: {
       map: {
         Aufklappen: 'collapsible',
-        Spalten2: 'cols2',
+        Spalten: 'cols',
         Karte: 'directions',
         Inhalt: 'md',
         Galerie: 'slideshow',
