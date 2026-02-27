@@ -22,8 +22,10 @@ const toggle = () => {
       <span>{{ title }}</span>
     </button>
     <div class="grid transition-[grid-template-rows] duration-300 ease-in-out" :class="isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
-      <div class="overflow-hidden p-4">
-        <slot />
+      <div class="min-h-0 overflow-hidden">
+        <div class="p-4">
+          <slot />
+        </div>
       </div>
     </div>
   </div>
