@@ -97,6 +97,10 @@ body:has(#mktcms-page) {
 
   .markdown-content {
     @apply prose max-w-none;
+
+    a {
+      word-break: break-all;
+    }
   }
   
   .button  {
