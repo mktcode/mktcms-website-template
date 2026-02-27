@@ -60,6 +60,7 @@ export default defineNuxtConfig({
         Karte: 'directions',
         Inhalt: 'md',
         Galerie: 'slideshow',
+        Video: 'videoplayer',
       }
     },
     headings: {
