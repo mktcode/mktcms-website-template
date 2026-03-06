@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const path = useRoute().params.path as string[]
 
-const content = await useMdContent<{ "SEO Titel"?: string }>(['Seiten', ...path, 'Seite.md'].join(':'))
+const content = await useMdContent<{ "SEO Titel"?: string }>(['Seiten', ...path.filter(Boolean), 'Seite.md'].join(':'))
 
 useSeoMeta({
   title: content.frontmatter["SEO Titel"],
