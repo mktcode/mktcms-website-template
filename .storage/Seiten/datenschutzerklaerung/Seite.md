@@ -1,5 +1,5 @@
 ---
-"SEO Titel": "Datenschutzerklärung"
+seoTitle: "Datenschutzerklärung"
 ---
 # Datenschutzerklärung
 

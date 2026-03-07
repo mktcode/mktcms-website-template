@@ -1,5 +1,5 @@
 ---
-"SEO Titel": "Startseite"
+seoTitle: "Startseite"
 ---
 # Moin!
 

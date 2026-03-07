@@ -1,5 +1,5 @@
 ---
-"SEO Titel": "Impressum"
+seoTitle: "Impressum"
 ---
 # Impressum
 

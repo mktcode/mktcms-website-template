@@ -1,5 +1,12 @@
 import tailwindcss from "@tailwindcss/vite";
 
+const frontmatterSchema = {
+  seoTitle: {
+    type: 'string',
+    label: 'SEO-Titel',
+  },
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -86,6 +93,12 @@ export default defineNuxtConfig({
       }
 
       updateDateRoutePath(pages as any)
+    },
+  },
+  mktcms: {
+    frontmatter: {
+      'Seiten/Startseite.md': frontmatterSchema,
+      'Seiten/**/*.md': frontmatterSchema,
     },
   },
 })

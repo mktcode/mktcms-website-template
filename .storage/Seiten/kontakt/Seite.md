@@ -1,5 +1,5 @@
 ---
-"SEO Titel": "Kontakt"
+seoTitle: "Kontakt"
 ---
 # Kontakt
 

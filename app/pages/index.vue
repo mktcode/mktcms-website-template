@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const content = await useMdContent<{ "SEO Titel"?: string }>('Seiten:Startseite.md')
+const content = await useMdContent<{ seoTitle?: string }>('Seiten:Startseite.md')
 
 useSeoMeta({
-  title: content.frontmatter["SEO Titel"],
+  title: content.frontmatter.seoTitle,
 })
 </script>
 
