@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<{
   width?: string | number
 }>(), {
   autoplay: false,
-  consentText: 'Mit dem Laden des Videos akzeptieren Sie die Datenübertragung an YouTube.'
+  consentText: 'Mit dem Abspielen des Videos akzeptieren Sie die Datenübertragung an YouTube (Google). Dadurch können Sie persönlich identifiziert werden.'
 })
 
 const consentGiven = ref(false)
@@ -24,9 +24,7 @@ const withPlayerOptions = (baseUrl: string) => {
   embedUrl.searchParams.set('fs', '0')
   embedUrl.searchParams.set('modestbranding', '1')
   embedUrl.searchParams.set('playsinline', '1')
-  if (props.autoplay) {
-    embedUrl.searchParams.set('autoplay', '1')
-  }
+  embedUrl.searchParams.set('autoplay', '1')
   return embedUrl.toString()
 }
 
@@ -91,9 +89,10 @@ const accept = () => {
           {{ consentText }}
         </p>
         <button
-          class="px-6 py-2 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
+          class="px-6 py-2 bg-white text-black font-semibold rounded hover:bg-gray-200 transition flex items-center mx-auto"
           @click="accept"
         >
+          <Icon name="heroicons:play" class="inline-block mr-2" />
           Video laden
         </button>
       </div>
