@@ -95,5 +95,6 @@ export default defineNuxtConfig({
   },
   plausible: {
     proxy: true,
+    autoPageviews: false,
   },
 })

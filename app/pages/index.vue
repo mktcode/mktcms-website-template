@@ -1,4 +1,5 @@
 <script setup lang="ts">
+useTrackPageview()
 const content = await useMdContent<{ seoTitle?: string }>('Seiten:Startseite.md')
 
 useSeoMeta({
