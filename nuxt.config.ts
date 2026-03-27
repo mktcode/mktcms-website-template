@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+    build: {
+      sourcemap: false,
+    },
   },
   eslint: {
     config: {
